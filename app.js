@@ -46,8 +46,8 @@ var circle = {
 	y: 0,
 	size: 0,
 	update: function() {
-		this.x = lerp(this.x, mouseX, 0.075)
-		this.y = lerp(this.y, mouseY, 0.075)
+		this.x = isDrawing ? lerp(this.x, mouseX, 0.075) : mouseX
+		this.y = isDrawing ? lerp(this.y, mouseY, 0.075) : mouseY
 		this.size = Math.abs(Math.round(Math.sin(t) * MAX_SIZE));
 	},
 	draw: function() {
